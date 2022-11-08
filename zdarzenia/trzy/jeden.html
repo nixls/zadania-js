@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>zadanie 1</title>
+    <style>
+        #kolorek {
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="kolorek">
+
+    </div>
+    <button id="red">Czerwone tło</button>
+    <button id="green">Zielone tło</button>
+    <script>
+        function changeColor(color) {
+            document.getElementById('kolorek').style.backgroundColor = color;
+        }
+
+        ['red', 'green'].forEach((elem) => {
+            document.getElementById(elem).addEventListener('click', () => {changeColor(elem)});
+        });
+    </script>
+</body>
+</html>

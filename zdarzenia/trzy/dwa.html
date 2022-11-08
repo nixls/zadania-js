@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dwa</title>
+</head>
+<body>
+    <span>0 -</span>
+    <input type="range" id="size" min="0" max="250" value="14">
+    <span>- 250</span>
+    <br>
+    Liczba: <span id="liczba" style="font-size: 14px;">14</span>
+    <script>
+        document.getElementById('size').addEventListener('input', (e) => {
+            let elem = document.getElementById('liczba');
+            elem.style.fontSize = `${e.target.value}px`;
+            elem.innerHTML = e.target.value;
+        });
+    </script>
+</body>
+</html>

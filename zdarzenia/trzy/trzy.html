@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Trzy</title>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="range" id="r" min="0" max="255" value="0">
+    <script>
+        document.getElementById('r').addEventListener('input', (e) => {
+            document.querySelector('body').style.backgroundColor = `rgb(${e.target.value}, 0, 0)`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Cztery</title>
+</head>
+<body>
+    <span class="ev" style="color: red;">Suovo</span>
+    <span class="ev" style="color: red;">Suovo2</span>
+    <span class="ev" style="color: red;">Mammona</span>
+    <span class="ev" style="color: green;">mad</span>
+    <span class="ev" style="color: green;">rozjuszony</span>
+    <span class="ev" style="color: green;">rozsierdzony</span>
+    <span class="ev" style="color: blue;">zmadowany</span>
+    <span class="ev" style="color: blue;">poddenerwowany</span>
+    <span class="ev" style="color: blue;">zdenerwowany</span>
+    <script>
+
+        document.querySelectorAll('.ev').forEach((elem) => {
+            elem.addEventListener('click', (e) => {
+                alert(`Slowo ma kolor: ${elem.style.color}`);
+            });
+        });
+    </script>
+</body>
+</html>
