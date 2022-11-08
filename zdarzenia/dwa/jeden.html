@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form id="radios">
+
+    <label for="jeden">200</label><input type="radio" value="200" name="x" id="jeden">
+    <label for="dwa">300</label><input type="radio" value="300" name="x" id="dwa">
+    <label for="trzy">500</label><input type="radio" value="500" name="x" id="trzy">
+</form>
+<span id="xdd"></span>
+<script>
+    function z1(ev) {
+        document.getElementById('xdd').innerHTML = ev.target.value;
+    }
+    ['jeden', 'dwa', 'trzy'].forEach((xd) => {
+       document.getElementById(xd).addEventListener('change', (ev) => z1(ev));
+    });
+</script>
+</body>
+</html>

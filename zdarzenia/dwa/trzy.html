@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>Rozmiar kwadratu: 0</span>
+<input type="range" name="" id="slider" min="0" max="500" value="300">
+<span>500 - aktualnie <span id="current">300</span>px</span>
+<br>
+<div id="dif" style="height: 300px; width: 300px; background-color: orange"></div>
+<script>
+  let slider = document.getElementById('slider');
+  let dif = document.getElementById('dif');
+  slider.addEventListener('input', (ev) => {
+    document.getElementById('current').innerText = ev.target.value;
+    dif.style.width = `${ev.target.value}px`;
+    dif.style.height = `${ev.target.value}px`;
+  });
+</script>
+</body>
+</html>

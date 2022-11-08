@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="checkbox" name="" id="read">
+<label for="read">Zapoznałem się z regulaminem</label>
+<div id="res"></div>
+<script>
+    let check = document.querySelector('#read');
+    let res = document.getElementById('res');
+    check.addEventListener('change', (ev) => {
+       if (ev.target.checked) {
+           res.innerHTML = `<h2>Pamiętaj! Koniecznie przeczytaj nasz regulamin</h2>`;
+       }
+    });
+</script>
+</body>
+</html>
