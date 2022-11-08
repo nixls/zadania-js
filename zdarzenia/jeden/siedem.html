@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>siedem</title>
+</head>
+<body>
+    <select id="lancuch">
+        <option value="-1">Wybierz łańcuch górski</option>
+
+    </select>
+    <br>
+    <img id="odp"></img>
+    <script>
+        let sel = document.getElementById('lancuch');
+        const lancuchy = [
+            {
+                "name": "Tatry",
+                "szczyt": "Rysy",
+                "wysokosc": 2499,
+                "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rysy%2C_wierzcholek_slowacki.jpg/220px-Rysy%2C_wierzcholek_slowacki.jpg"
+            },
+            {
+                "name": "Karkonosze",
+                "szczyt": "Śnieżka",
+                "wysokosc": 1603,
+                "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/%C5%9Anie%C5%BCka_z_zachodu.jpg/240px-%C5%9Anie%C5%BCka_z_zachodu.jpg"
+            },
+            {
+                "name": "Beskidy",
+                "szczyt": "Skrzyczne",
+                "wysokosc": 1257,
+                "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Kolej_na_Skrzyczne2.JPG/163px-Kolej_na_Skrzyczne2.JPG"
+            }
+        ]
+
+        sel.addEventListener('change', () => {
+            if (sel.value == "-1") {
+                document.getElementById('odp').setAttribute('src', '');
+                return;
+            }
+            let szczyt = lancuchy[Number(sel.value)];
+            document.getElementById('odp').setAttribute('src', szczyt.img);
+        });
+
+        for(let i = 0; i < lancuchy.length; i++) {
+            let curr = lancuchy[i];
+            let elem = new Option(`${curr.name} - ${curr.szczyt}`, i);
+            sel.appendChild(elem);
+        }
+    </script>
+</body>
+</html>

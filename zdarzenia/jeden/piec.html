@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piec</title>
+</head>
+<body>
+    <input type="number" id="jeden">
+    +
+    <input type="number" id="dwa">
+    <button id="equals">=</button>
+    <b id="wynik"></b>
+    <script>
+        document.querySelector('#equals').addEventListener('click', () => {
+            let [jeden, dwa, wynik] = ['jeden', 'dwa', 'wynik'].map(x => document.getElementById(x));
+            wynik.innerHTML = Number(jeden.value) + Number(dwa.value);
+        });
+    </script>
+</body>
+</html>

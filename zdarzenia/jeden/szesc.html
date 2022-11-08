@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>szesc</title>
+</head>
+<body>
+    <select id="lancuch">
+        <option value="-1">Wybierz łańcuch górski</option>
+    </select>
+    <span id="odp"></span>
+    <script>
+        const lancuchy = [
+            {
+                "name": "Tatry",
+                "szczyt": "Rysy",
+                "wysokosc": 2499
+            },
+            {
+                "name": "Karkonosze",
+                "szczyt": "Śnieżka",
+                "wysokosc": 1603
+            },
+            {
+                "name": "Beskidy",
+                "szczyt": "Skrzyczne",
+                "wysokosc": 1257
+            }
+        ]
+        // @ts-check
+        let sel = document.getElementById('lancuch');
+        sel.addEventListener('change', () => {
+            if (sel.value == "-1") {
+                document.getElementById('odp').innerHTML = '';
+                return;
+            }
+            let szczyt = lancuchy[Number(sel.value)];
+            document.getElementById('odp').innerHTML = 
+                `Najwyższy szczyt: ${szczyt.szczyt} - ${szczyt.wysokosc} m.n.p.m`;
+        });
+
+        for(let i = 0; i < lancuchy.length; i++) {
+            let curr = lancuchy[i];
+            let elem = new Option(`${curr.name}`, i);
+            sel.appendChild(elem);
+        }
+    </script>
+</body>
+</html>
