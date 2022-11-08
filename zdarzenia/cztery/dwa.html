@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>dwa*</title>
+</head>
+<body>
+    <div id="jgdiv" style="border: 1px solid black; width: 100px; height: 100px;"></div>
+    <span id="XD">zjechałeś</span>
+    <script>
+        let div = document.getElementById('jgdiv');
+        let span = document.getElementById('XD');
+        div.addEventListener('mouseenter', (e) => {
+            span.innerHTML = "najechałeś";
+        });
+        div.addEventListener('mouseleave', (e) => {
+            span.innerHTML = "zjechałeś";
+        });
+    </script>
+</body>
+</html>

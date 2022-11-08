@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>trzy*</title>
+</head>
+<body>
+    <label>Podaj imię: <input type="text" id="imie"></label>
+    <br>
+    <span id="imieopis"></span>
+    <script>
+        let imie = document.getElementById('imie');
+        let span = document.getElementById('imieopis');
+        imie.addEventListener('blur', (e) => {
+            span.innerHTML = "";
+        });
+        imie.addEventListener('focus', (e) => {
+            span.innerHTML = "Wpisz swoje imię, pierwsza litera duża, pozostałe małe.";
+        });
+    </script>
+</body>
+</html>
